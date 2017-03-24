@@ -1,0 +1,16 @@
+Source: trinidad-jars
+Section: ruby
+Priority: optional
+Maintainer: Yury Zavarin <yzavarin@ebi.ac.uk>
+XS-Ruby-Versions: all
+Build-Depends:
+ debhelper (>= 9),
+ gem2deb,
+
+Package: jruby-trinidad-jars
+Architecture: all
+XS-Ruby-Versions: ${ruby:Versions}
+X-DhRuby-Root: tmp-trinidad-jars
+Depends:
+ jruby,
+Description: Bundled version of Tomcat and a slice of Java required by Trinidad

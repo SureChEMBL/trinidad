@@ -12,3 +12,5 @@ catalog.xml
 .idea
 .bundle
 Gemfile.lock*
+
+/tmp-trinidad-jars

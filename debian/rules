@@ -1,0 +1,30 @@
+#!/usr/bin/make -f
+
+PACKAGE = jruby-trinidad-jars
+
+TMP_DIR = tmp-trinidad-jars
+LIB_DIR = lib/trinidad
+TMP_LIB_DIR = $(TMP_DIR)/$(LIB_DIR)
+
+DEBIAN_JARS_DEST_DIR = debian/$(PACKAGE)/usr/lib/ruby
+
+override_dh_auto_clean:
+	rm -rf $(TMP_DIR)
+	debclean
+
+override_dh_auto_build:
+	mkdir -p $(TMP_DIR)
+	cp -r trinidad_jars.gemspec trinidad-libs $(TMP_DIR)
+
+	mkdir -p $(TMP_LIB_DIR)
+	cp $(LIB_DIR)/jars.rb $(TMP_LIB_DIR)
+
+	dh_auto_build
+
+override_dh_auto_install:
+	dh_auto_install
+	cp -r $(TMP_DIR)/trinidad-libs $(DEBIAN_JARS_DEST_DIR)
+
+
+%:
+	dh $@ --buildsystem=ruby --with ruby
