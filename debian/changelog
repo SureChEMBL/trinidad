@@ -1,0 +1,11 @@
+trinidad (1.4.6-2) unstable; urgency=medium
+
+  * Don't change shebang line in "trinidad" exec file.
+
+ -- Yury Zavarin <yzavarin@ebi.ac.uk>  Fri, 24 Mar 2017 15:11:26 +0000
+
+trinidad (1.4.6-1) unstable; urgency=medium
+
+  * Initial release.
+
+ -- Yury Zavarin <yzavarin@ebi.ac.uk>  Fri, 24 Mar 2017 12:20:28 +0000

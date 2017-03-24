@@ -13,5 +13,13 @@ override_dh_auto_build:
 
 	dh_auto_build
 
+override_dh_auto_install:
+	dh_auto_install
+
+	# There is no way to turn off shebang rewriting in dh_ruby
+	# (XS-Ruby-Versions fields in control file), but we want to keep
+	# "jruby" there, so simply copying exec file again
+	cp $(TMP_DIR)/bin/trinidad debian/trinidad/usr/bin
+
 %:
 	dh $@ --buildsystem=ruby --with ruby

@@ -13,7 +13,6 @@ Build-Depends-Indep:
 
 Package: trinidad
 Architecture: all
-XS-Ruby-Versions: ${ruby:Versions}
 X-DhRuby-Root: tmp-trinidad
 Depends:
  jruby,
