@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+TMP_DIR = tmp-trinidad
+
+override_dh_auto_clean:
+	rm -rf $(TMP_DIR)
+	debclean
+
+override_dh_auto_build:
+	mkdir -p $(TMP_DIR)
+	cp -r bin Gemfile lib LICENSE trinidad.gemspec spec $(TMP_DIR)
+	rm $(TMP_DIR)/lib/trinidad/jars.rb
+
+	dh_auto_build
+
+%:
+	dh $@ --buildsystem=ruby --with ruby

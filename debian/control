@@ -1,0 +1,23 @@
+Source: trinidad
+Section: ruby
+Priority: optional
+Maintainer: Yury Zavarin <yzavarin@ebi.ac.uk>
+XS-Ruby-Versions: all
+Build-Depends:
+ debhelper (>= 9),
+ gem2deb,
+Build-Depends-Indep:
+ jruby,
+ jruby-jruby-rack (>= 1.1.13), jruby-jruby-rack (<< 1.2),
+ jruby-trinidad-jars (>= 1.3.0), jruby-trinidad-jars (<< 1.5.0),
+
+Package: trinidad
+Architecture: all
+XS-Ruby-Versions: ${ruby:Versions}
+X-DhRuby-Root: tmp-trinidad
+Depends:
+ jruby,
+ jruby-jruby-rack (>= 1.1.13), jruby-jruby-rack (<< 1.2),
+ jruby-trinidad-jars (>= 1.3.0), jruby-trinidad-jars (<< 1.5.0),
+Description: Web server for Rails/Rack applications built upon JRuby::Rack and Apache Tomcat
+
