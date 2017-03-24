@@ -15,6 +15,8 @@ Gem::Specification.new do |gem|
   gem.homepage = 'https://github.com/trinidad/trinidad'
   gem.licenses = ['MIT', 'Apache-2.0']
 
+  gem.platform = 'java'
+
   gem.require_paths = %w[lib]
   gem.executables = ["trinidad"]
   gem.default_executable = 'trinidad'
